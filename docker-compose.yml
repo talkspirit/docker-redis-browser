@@ -1,0 +1,9 @@
+redis:
+  image: redis
+redis-browser:
+  build: ./
+  command: --url redis://redis:6379
+  links:
+    - redis:redis
+  ports:
+    - "8081:4567"
